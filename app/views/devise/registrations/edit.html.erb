@@ -49,6 +49,19 @@
     
     </div>
   
+  
+    <div class="form-group">
+    
+     
+    
+      <%= f.text_field :description, placeholder: "Description" %>
+    
+    </div>
+  
+  
+  
+  
+  
     <div class="actions">
      
       <%= f.submit "Enregistrer", class: "btn btn-primary"%>
@@ -56,6 +69,8 @@
     </div>
   
   <% end %>
+  
+  <%= link_to "Mon profile", @user%>
   
   </div>
 </div>
