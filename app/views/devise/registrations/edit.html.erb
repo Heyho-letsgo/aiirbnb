@@ -1,14 +1,40 @@
 <div class="class row">
-  <div class="col-md-5 col-md-offset-3 text-center"></div>
-  
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
-  
+  <div class="col-md-3">
+ 
+     <ul class="sidebar-list">
+ 
+          <li class="sidebar-item">
+ 
+               <%= link_to 'Modifier mon profil', edit_user_registration_path, class: 'sidebar-link active' %>
+ 
+          </li>
+ 
+     </ul>
+ 
+ <br>
+ 
+ <%= link_to 'Voir mon profil', user_path(current_user.id), class: 'btn btn-default wide' %>
+ 
+ </div>
+ 
+ 
+ 
+ <div class="col-md-7 text-center">
+ 
+       <div class="panel panel-default">
+ 
+           <div class="panel-heading">Edit <%= @user.fullname %></div>
+ 
+                <div class="panel-body">
+ 
+                    <div class="container">
+ 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= devise_error_messages! %>
 
     <div class="form-group">
     
-      <%= f.text_field :fullname, autofocus: true,placeholder: "Nom Complet (Prénom + Nom)" %>
+      <%= f.text_field :fullname, autofocus: true,placeholder: "Nom Complet (Prénom + Nom)", class: "form-control" %>
     
     </div>
 
@@ -16,28 +42,43 @@
   
     <div class="form-group">
      
-      <%= f.email_field :email, autofocus: true %>
+      <%= f.email_field :email, autofocus: true, class: "form-control"  %>
     
     </div>
     
-    <div class="class form-group">
-      
-      <%= f.file_field :avatar %>
-    </div>
+<div class="row">
+ 
+      <div class="col-md-12">
+ 
+              <div class="form-group">
+ 
+                   <span class="btn btn-default btn-file">
+ 
+                        Upload ma photo
+ 
+                        <%= f.file_field :avatar %>
+ 
+                   </span>
+ 
+               </div>
+ 
+        </div>  
+ 
+ </div>
 
   
     <div class="form-group">
     
       <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     
-      <%= f.password_field :password, autocomplete: "off" %>
+      <%= f.password_field :password, autocomplete: "off", class: "form-control"  %>
     
     </div>
   
     
     <div class="form-group">
     
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control"  %>
     
     </div>
   
@@ -45,7 +86,7 @@
     
       <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     
-      <%= f.password_field :current_password, autocomplete: "off" %>
+      <%= f.password_field :current_password, autocomplete: "off", class: "form-control"  %>
     
     </div>
   
@@ -54,7 +95,7 @@
     
      
     
-      <%= f.text_field :description, placeholder: "Description" %>
+      <%= f.text_area :description, placeholder: "Description", class: "form-control"  %>
     
     </div>
   
