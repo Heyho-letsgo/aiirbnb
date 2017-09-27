@@ -1,0 +1,33 @@
+<div class = "panel panel-default">
+    <div class = "panel-heading">
+        Devenez Hôtes AiirBnb
+    </div>
+    
+    <div class="panel-body">
+        
+        <div class="container">
+        
+            <%= form_for @room do |f|%>
+            
+                <div class="row">
+                    
+                    <div class="col md-4">
+                        
+                        <div class = "form-group">
+                            <label>Genre d'habitation</label>
+                            <%= f.select :home_type, [["Maison","Maison"],["Appartement", "Appartement"],["Bed & breakfast", "Bed & breakfast"]], 
+                            id: "home_type",promt: "A selectionner...", class: "form-control" %>
+                        </div>
+                        
+                        </div>
+                        
+                        </div>
+                    </div>
+                        
+                        
+                    </div>
+            <% end %>
+            
+        </div>
+    </div>
+</div>
