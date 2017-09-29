@@ -22,6 +22,15 @@ class RoomsController < ApplicationController
     end
     
     
+    def show
+       @photos = @room.photos 
+    end
+    
+    def edit
+        
+    end
+    
+    
     def update
         @room = current_user.room.build(room_params)
         
