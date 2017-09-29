@@ -12,7 +12,7 @@ class RoomsController < ApplicationController
     end
     
     def create
-        @room = current_user.room.build(room_params)
+        @room = current_user.rooms.build(room_params)
         
         if @room.save
             redirect_to @room, notice:"Votre annonce a été créée avec succès"
