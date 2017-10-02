@@ -22,6 +22,11 @@ class RoomsController < ApplicationController
     end
     
     
+    
+    
+    
+    
+    
     def show
        @photos = @room.photos 
     end
@@ -50,7 +55,7 @@ class RoomsController < ApplicationController
     
     def set_room
        
-       @room = Room.find(params[id])
+       @room = Room.find(params[:id])
         
     end
     
